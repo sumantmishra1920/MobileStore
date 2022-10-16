@@ -1,21 +1,28 @@
 package com.mobilestore.main.entity;
 
 import java.time.LocalDate;
+//import java.util.List;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 
 @Entity
+@Table(name="Orders")
 public class Order {
 	
 	@Id
 	@GeneratedValue
 	private int orderId;
-	@Column
+	@OneToMany
+	@JoinColumn(name="order_fk",referencedColumnName="orderId")
 	private List<Mobile> mobiles;
 	@Column
 	private LocalDate orderDate;
@@ -27,7 +34,7 @@ public class Order {
 	private int cost;
 	@Column
 	private int totalCost;
-	@Column
+	@ManyToOne
 	private Customer customer;
 	@Column
 	private String status;
@@ -38,6 +45,7 @@ public class Order {
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
+	
 	public List<Mobile> getMobiles() {
 		return mobiles;
 	}
@@ -86,6 +94,18 @@ public class Order {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
+	public Order(int orderId, List<Mobile> mobiles, LocalDate orderDate, LocalDate dispatchDate, int quantity, int cost,
+			int totalCost, Customer customer, String status) {
+		super();
+		this.orderId = orderId;
+		this.mobiles = mobiles;
+		this.orderDate = orderDate;
+		this.dispatchDate = dispatchDate;
+		this.quantity = quantity;
+		this.cost = cost;
+		this.totalCost = totalCost;
+		this.customer = customer;
+		this.status = status;
+	}
 	
 }

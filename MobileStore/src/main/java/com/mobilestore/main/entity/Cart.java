@@ -6,6 +6,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 @Entity
@@ -14,9 +17,11 @@ public class Cart {
 	@Id
 	@GeneratedValue
 	private int cartId;
-	@Column
+	@OneToOne
+	@JoinColumn(name="customer_fk",referencedColumnName="customerId")
 	private Customer customer;
-	@Column
+	@OneToMany
+	@JoinColumn(name="cart_fk",referencedColumnName="cartId")
 	private List<Mobile> mobiles;
 	@Column
 	private int quantity;
@@ -51,6 +56,14 @@ public class Cart {
 		return cost;
 	}
 	public void setCost(int cost) {
+		this.cost = cost;
+	}
+	public Cart(int cartId, Customer customer, List<Mobile> mobiles, int quantity, int cost) {
+		super();
+		this.cartId = cartId;
+		this.customer = customer;
+		this.mobiles = mobiles;
+		this.quantity = quantity;
 		this.cost = cost;
 	}
 	

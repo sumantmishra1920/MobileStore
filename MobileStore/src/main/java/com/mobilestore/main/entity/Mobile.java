@@ -3,11 +3,13 @@ package com.mobilestore.main.entity;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
-
+@Embeddable
 @Entity
 public class Mobile {
 	
@@ -24,7 +26,7 @@ public class Mobile {
 	private String modelNumber;
 	@Column
 	private String companyName;
-	@Column
+	@ManyToOne
 	private Category category;
 	
 	public int getMobileId() {
@@ -67,6 +69,17 @@ public class Mobile {
 		return category;
 	}
 	public void setCategory(Category category) {
+		this.category = category;
+	}
+	public Mobile(int mobileId, String mobileName, float mobileCost, LocalDate mfd, String modelNumber,
+			String companyName, Category category) {
+		super();
+		this.mobileId = mobileId;
+		this.mobileName = mobileName;
+		this.mobileCost = mobileCost;
+		this.mfd = mfd;
+		this.modelNumber = modelNumber;
+		this.companyName = companyName;
 		this.category = category;
 	}
 	
