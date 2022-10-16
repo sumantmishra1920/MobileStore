@@ -50,8 +50,14 @@ public class Customer {
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-	
-	
+	public Customer(int customerId, String customerName, String address, Long mobileNumber, String emailId) {
+		super();
+		this.customerId = customerId;
+		this.customerName = customerName;
+		this.address = address;
+		this.mobileNumber = mobileNumber;
+		this.emailId = emailId;
+	}
 	
 	
 	
