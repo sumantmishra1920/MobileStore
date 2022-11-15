@@ -1,0 +1,13 @@
+
+.mystyle{
+    background-image: linear-gradient(rgb(19, 19, 102), rgb(31, 31, 156), rgb(44, 44, 211));
+    min-height: 100vh;
+}
+.center{
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+}

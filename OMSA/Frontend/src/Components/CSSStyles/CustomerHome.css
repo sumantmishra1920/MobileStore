@@ -1,0 +1,43 @@
+.customerhome{
+    background-image:url(../../../public/images/customerhome.jpg),linear-gradient(to right, #DECBA4, #3E5151);
+    background-repeat: no-repeat;
+    background-position: 40% 30%;
+    animation-name: animate;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+    height: 100vh;
+    width: 100vw;
+  }
+  @keyframes animate{
+    12.5%{background-image:url(../../../public/images/customerhome.jpg),linear-gradient(to right, #DECBA4, #3E5151);background-position: 40% 30%;}
+    25%{background-image:url(../../../public/images/customerhome.jpg),linear-gradient(to right, #8360c3, #2ebf91);background-position: 40% 30%;}
+    37.5%{background-image:url(../../../public/images/customerhome1.jpg),linear-gradient(to right, #fffbd5, #b20a2c);background-position: 40% 30%;}
+    50%{background-image:url(../../../public/images/customerhome1.jpg),linear-gradient(to right, #fc5c7d, #6a82fb);background-position: 40% 30%;}
+
+    62.5%{background-image:url(../../../public/images/customerhome2.jpg),linear-gradient(to right, #fffbd5, #b20a2c);background-position: 40% 30%;}
+    75%{background-image:url(../../../public/images/customerhome2.jpg),linear-gradient(to right, #8360c3, #2ebf91);background-position: 40% 30%;}
+    87.5%{background-image:url(../../../public/images/customerhome3.jpg),linear-gradient(to right, #DECBA4, #3E5151);background-position: 40% 30%;}
+    100%{background-image:url(../../../public/images/customerhome3.jpg),linear-gradient(to right, #fc5c7d, #6a82fb);background-position: 40% 30%;}
+  }
+  .start{
+    background: rgb(1, 27, 44);
+    border-radius: 50px;
+    border: 1px solid rgb(1, 27, 44);
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    height:50px;
+    box-shadow: 10px 10px 5px rgb(3, 43, 108);
+    border-left-width: 10px;
+    border-right-width: 10px;
+
+    
+  }
+
+  .start:hover{
+    background: rgb(5, 94, 153);
+    border-radius: 50px;
+    border: 1px solid rgb(5, 94, 153);
+    border-left-width: 10px;
+    border-right-width: 10px;
+  }
